@@ -1,4 +1,4 @@
-# E-commerce React 2025
+# E-commerce React (Clon Mercado Libre)
 
 Bienvenido al proyecto de E-commerce desarrollado con React y TypeScript. Esta aplicación es una plataforma de comercio electrónico moderna y escalable que incluye funcionalidades como catálogo de productos, carrito de compras, y gestión de pedidos.
 
@@ -36,39 +36,6 @@ src/
 ├── App.tsx           # Componente raíz de la aplicación
 └── main.tsx          # Punto de entrada de la aplicación
 ```
-
-## 🚀 Inicio Rápido
-
-1. **Clonar el repositorio**
-   ```bash
-   git clone [url-del-repositorio]
-   cd trabajoPracticoReact2025
-   ```
-
-2. **Instalar dependencias**
-   ```bash
-   npm install
-   # o
-   yarn
-   ```
-
-3. **Iniciar el servidor de desarrollo**
-   ```bash
-   npm run dev
-   # o
-   yarn dev
-   ```
-
-4. **Abrir en el navegador**
-   La aplicación estará disponible en [http://localhost:5173](http://localhost:5173)
-
-## 📦 Scripts Disponibles
-
-- `npm run dev` - Inicia el servidor de desarrollo
-- `npm run build` - Construye la aplicación para producción
-- `npm run preview` - Previsualiza la versión de producción
-- `npm run lint` - Ejecuta el linter
-
 ## 🌍 Vista en Vivo
 
 Puedes ver una versión desplegada de la aplicación en:
