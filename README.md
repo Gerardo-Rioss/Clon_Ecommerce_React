@@ -39,7 +39,7 @@ src/
 ## 🌍 Vista en Vivo
 
 Puedes ver una versión desplegada de la aplicación en:
-[https://trabajo-practico-react2025.vercel.app/](https://trabajo-practico-react2025.vercel.app/)
+https://ecommerce-clon.netlify.app/
 
 ## 📝 Licencia
 
