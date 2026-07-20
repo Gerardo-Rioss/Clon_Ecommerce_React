@@ -1,20 +1,19 @@
 .formContainer {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: var(--max-width-detail);
+  margin: var(--space-2xl) auto;
+  padding: var(--space-2xl);
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
-
 .formTitle {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #2d3748;
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-xl);
+  color: var(--text-primary);
   font-weight: 700;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: var(--space-sm);
 }
 
 .formTitle::after {
@@ -24,41 +23,44 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background: #4f46e5;
+  background: var(--color-accent);
 }
-
-
-
 
 .productForm {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-xl);
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-sm);
 }
 
 .formLabel {
   font-weight: 500;
-  color: #555;
-  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
 }
 
 .formInput {
-  padding: 0.8rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.2s ease;
+  padding: var(--space-md) var(--space-lg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+.formInput::placeholder {
+  color: var(--text-muted);
 }
 
 .formInput:focus {
   outline: none;
-  border-color: #3483fa;
+  border-color: var(--color-accent);
   box-shadow: 0 0 0 2px rgba(52, 131, 250, 0.2);
 }
 
@@ -71,7 +73,8 @@
 .currencySymbol {
   position: absolute;
   left: 12px;
-  color: #666;
+  color: var(--text-secondary);
+  font-weight: 500;
 }
 
 .priceInput {
@@ -82,67 +85,46 @@
 .textarea {
   min-height: 100px;
   resize: vertical;
+  line-height: 1.5;
 }
 
 .selectInput {
   appearance: none;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-position: right 1rem center;
+  background-position: right var(--space-lg) center;
   background-size: 1em;
+  cursor: pointer;
 }
 
 .errorMessage {
-  color: #ff3333;
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
+  color: var(--color-error);
+  font-size: var(--font-size-xs);
+  margin-top: var(--space-xs);
+  font-weight: 500;
 }
 
 .submitButton {
-  background: #3483fa;
-  color: white;
+  background: var(--color-accent);
+  color: var(--text-white);
   border: none;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
-  margin-top: 1rem;
+  transition: all var(--transition-base);
+  margin-top: var(--space-lg);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-sm);
 }
 
 .submitButton:hover {
-  background: #2968c8;
+  background: var(--color-accent-hover);
   transform: translateY(-1px);
-  
-}
-/* 3483fa - 2968c8*/
-
-.cancelButton {
-  background-color: #f1f3f5;
-  color: #495057;
-  border: 1.5px solid #dee2e6;
-  border: none;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.cancelButton:hover {
-  background-color: #e9ecef;
-  box-shadow: 0 4px 12px rgba(73, 80, 87, 0.15);
+  box-shadow: var(--shadow-accent);
 }
 
 .submitButton:active {
@@ -150,9 +132,32 @@
 }
 
 .submitButton:disabled {
-  background: #ccc;
+  background: var(--border-medium);
   cursor: not-allowed;
   transform: none;
+  box-shadow: none;
+}
+
+.cancelButton {
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-light);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  margin-top: var(--space-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.cancelButton:hover {
+  background-color: var(--bg-hover);
+  box-shadow: var(--shadow-sm);
 }
 
 .spinner {
@@ -170,21 +175,27 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .formContainer {
-    padding: 1.5rem;
-    margin: 1rem;
-  }
-
-  .formTitle {
-    font-size: 1.5rem;
-  }
-}
 .buttonAccion {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-lg);
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .formContainer {
+    padding: var(--space-xl);
+    margin: var(--space-lg);
+  }
+
+  .formTitle {
+    font-size: var(--font-size-2xl);
+  }
+
+  .buttonAccion {
+    flex-direction: column;
+    gap: 0;
+  }
 }

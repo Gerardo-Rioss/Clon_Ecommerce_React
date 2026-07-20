@@ -1,108 +1,56 @@
-/* NotFound.module.css */
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 70vh;
-  padding: 2rem;
-  background-color: #f8fafc;
+  min-height: 400px;
+  padding: 32px;
 }
 
-.content {
+.card {
   text-align: center;
-  max-width: 600px;
-  padding: 3rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-width: 420px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  padding: 40px 32px;
 }
 
-.errorCode {
-  font-size: 6rem;
-  font-weight: 800;
+.code {
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--color-accent);
   line-height: 1;
-  color: #4f46e5;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(to right, #4f46e5, #a855f7);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  margin-bottom: 8px;
+  opacity: 0.15;
 }
 
 .title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 1rem;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 12px;
 }
 
 .message {
-  font-size: 1.1rem;
-  color: #64748b;
+  font-size: 14px;
+  color: var(--text-muted);
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin: 0 0 28px;
 }
 
-.actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.homeLink {
+.button {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #4f46e5;
-  color: white;
-  border-radius: 6px;
+  padding: 12px 28px;
+  background: var(--color-accent);
+  color: var(--text-white);
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.homeLink:hover {
-  background-color: #4338ca;
-  transform: translateY(-1px);
-}
-
-.contactLink {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid #e2e8f0;
-  color: #4f46e5;
   border-radius: 6px;
-  text-decoration: none;
   font-weight: 500;
-  transition: all 0.2s ease;
+  font-size: 14px;
+  transition: all 0.2s;
 }
 
-.contactLink:hover {
-  background-color: #eef2ff;
+.button:hover {
+  background: var(--color-accent-hover);
   transform: translateY(-1px);
-}
-
-/* Responsive design */
-@media (max-width: 640px) {
-  .errorCode {
-    font-size: 4rem;
-  }
-  
-  .title {
-    font-size: 1.5rem;
-  }
-  
-  .message {
-    font-size: 1rem;
-  }
-  
-  .actions {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  .homeLink,
-  .contactLink {
-    width: 100%;
-  }
 }

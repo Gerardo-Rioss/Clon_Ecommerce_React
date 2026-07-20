@@ -1,4 +1,5 @@
 import styles from "./ProductList.module.css";
+
 type ProductListProps = {
   title: string;
   description?: string;
@@ -6,13 +7,13 @@ type ProductListProps = {
 };
 
 function ProductList(props: ProductListProps) {
-  const { title, description, children } = props;
+  const { title, children } = props;
   return (
-    <div className={styles.listContainer}>
+    <section className={styles.listContainer}>
       <h2 className={styles.title}>{title}</h2>
-      <p>{description}</p>
       <div className={styles.productContainer}>{children}</div>
-    </div>
+    </section>
   );
 }
+
 export default ProductList;

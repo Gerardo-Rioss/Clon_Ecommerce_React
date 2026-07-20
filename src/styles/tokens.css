@@ -1,0 +1,144 @@
+/* ═══════════════════════════════════════════════
+   🎨 Design System Tokens — MeliStyle
+   Paleta inspirada en Mercado Libre con identidad propia
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* ─── Brand ─── */
+  --color-primary: #ffe600;
+  --color-primary-hover: #f5d200;
+  --color-primary-light: #fff8cc;
+  --color-accent: #3483fa;
+  --color-accent-hover: #2968c8;
+  --color-accent-light: #e5f0ff;
+  --color-success: #00a650;
+  --color-success-light: #e6f7ee;
+  --color-error: #f23d3d;
+  --color-error-light: #fee2e2;
+  --color-warning: #ff7733;
+
+  /* ─── Text ─── */
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --text-white: #ffffff;
+  --text-link: #3483fa;
+  --text-price: #333333;
+
+  /* ─── Meli Accents ─── */
+  --color-free-shipping: #00a650;
+  --color-free-shipping-bg: #e6f7ee;
+  --color-discount: #f23d3d;
+
+  /* ─── Backgrounds ─── */
+  --bg-page: #ebebeb;
+  --bg-card: #ffffff;
+  --bg-elevated: #f5f5f5;
+  --bg-hover: #f0f0f0;
+  --bg-footer: #2d3748;
+  --bg-overlay: rgba(0, 0, 0, 0.05);
+
+  /* ─── Borders ─── */
+  --border-light: #e5e5e5;
+  --border-medium: #cccccc;
+  --border-focus: #3483fa;
+
+  /* ─── Shadows ─── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.12);
+  --shadow-accent: 0 4px 12px rgba(52, 131, 250, 0.3);
+
+  /* ─── Typography ─── */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.8rem;
+
+  /* ─── Spacing ─── */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-xl: 1.5rem;
+  --space-2xl: 2rem;
+  --space-3xl: 3rem;
+
+  /* ─── Border Radius ─── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* ─── Transitions ─── */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  /* ─── Layout ─── */
+  --sidebar-width: 300px;
+  --header-height: auto;
+  --max-width-content: 1400px;
+  --max-width-detail: 800px;
+
+  /* ─── Z-index ─── */
+  --z-header: 100;
+  --z-sidebar: 50;
+  --z-overlay: 200;
+  --z-modal: 300;
+}
+
+/* ═══════════════════════════════════════════════
+   🌙 Dark Mode — anula variables con .dark
+   ═══════════════════════════════════════════════ */
+
+.dark {
+  /* Brand */
+  --color-primary: #ffe600;
+  --color-primary-hover: #f5d200;
+  --color-primary-light: #3d3a00;
+  --color-accent: #4d9aff;
+  --color-accent-hover: #6aadff;
+  --color-accent-light: #1a2a4a;
+  --color-success: #00c853;
+  --color-success-light: #1a3a2a;
+  --color-error: #ff5252;
+  --color-error-light: #3a1a1a;
+  --color-warning: #ff8a50;
+
+  /* Text */
+  --text-primary: #e8e8e8;
+  --text-secondary: #a0a0a0;
+  --text-muted: #707070;
+  --text-white: #ffffff;
+  --text-link: #4d9aff;
+  --text-price: #e8e8e8;
+
+  /* Meli Accents */
+  --color-free-shipping: #00c853;
+  --color-free-shipping-bg: #1a3a2a;
+  --color-discount: #ff5252;
+
+  /* Backgrounds */
+  --bg-page: #121212;
+  --bg-card: #1e1e1e;
+  --bg-elevated: #2a2a2a;
+  --bg-hover: #333333;
+  --bg-footer: #0a0a0a;
+  --bg-overlay: rgba(255, 255, 255, 0.05);
+
+  /* Borders */
+  --border-light: #333333;
+  --border-medium: #444444;
+  --border-focus: #4d9aff;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.5);
+  --shadow-accent: 0 4px 12px rgba(77, 154, 255, 0.2);
+}

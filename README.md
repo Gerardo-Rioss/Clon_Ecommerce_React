@@ -1,65 +1,172 @@
-# E-commerce React (Clon Mercado Libre)
+# MeliStyle 🛍️
 
-Bienvenido al proyecto de E-commerce desarrollado con React y TypeScript. Esta aplicación es una plataforma de comercio electrónico moderna y escalable que incluye funcionalidades como catálogo de productos, carrito de compras, y gestión de pedidos.
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.3-646CFF?logo=vite)](https://vite.dev)
+[![MUI](https://img.shields.io/badge/MUI-7-007FFF?logo=mui)](https://mui.com/)
+[![Deploy](https://img.shields.io/badge/Deploy-Netlify-00C7B7?logo=netlify)](https://ecommerce-clon.netlify.app)
 
-## 🚀 Tecnologías Principales
+> A polished e-commerce front-end inspired by Mercado Libre Argentina — built with React 19, TypeScript, and Material-UI. Features a complete shopping cart flow, product catalog with filtering, and a dark mode that doesn't hurt your eyes.
 
-- **React 19** - Biblioteca de JavaScript para construir interfaces de usuario
-- **TypeScript** - Tipado estático para JavaScript
-- **Vite** - Herramienta de construcción y desarrollo
-- **React Router** - Manejo de rutas en la aplicación
-- **Material-UI (MUI)** - Biblioteca de componentes de interfaz de usuario
-- **React Query** - Manejo de estado del servidor y caché
-- **Formik + Yup** - Manejo de formularios y validación
-- **Axios** - Cliente HTTP para peticiones a la API
-- **React Icons** - Biblioteca de iconos populares
+## ✨ Features
 
-## 🛠️ Estructura del Proyecto
+- **Product Catalog** — Browse, search, and filter products from the [FakeStore API](https://fakestoreapi.com/)
+- **Advanced Filtering** — By category, price range, and keyword search, persisted in URL params
+- **Shopping Cart** — Persistent cart with quantity controls, subtotals, and validation
+- **Checkout Flow** — Multi-step checkout with Formik + Yup validation (name, email, phone, address)
+- **Responsive Design** — Mobile-first with collapsible sidebar overlay and hamburger menu
+- **Dark Mode** — CSS custom properties-based theme with `localStorage` persistence and system preference detection
+- **Loading Skeletons** — MUI Skeleton components for all async views
+- **Performance Optimized** — Route-level code splitting (`React.lazy`), manual vendor chunking, 227 KB main bundle
+- **Premium Price Display** — Superscript cents and installment info (inspired by real Meli UI)
+- **Free Shipping Badge** — Dynamic badge on qualifying products
+
+## 🧰 Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| **Framework** | React 19 |
+| **Language** | TypeScript 5.8 |
+| **Build Tool** | Vite 6.3 + SWC |
+| **UI Library** | Material-UI 7 (MUI) |
+| **Routing** | React Router 7 |
+| **Data Fetching** | TanStack React Query 5 |
+| **Forms** | Formik + Yup |
+| **HTTP Client** | Axios |
+| **Icons** | React Icons (Hi) + MUI Icons |
+| **Font** | Inter (Google Fonts) |
+| **Styling** | CSS Modules + CSS Custom Properties |
+
+## 🚀 Getting Started
+
+```bash
+# Clone
+git clone https://github.com/Gerardo-Rioss/Clon_Ecommerce_React.git
+cd Clon_Ecommerce_React
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 📁 Project Structure
 
 ```
 src/
-├── assets/           # Recursos estáticos (imágenes, fuentes, etc.)
-├── components/       # Componentes reutilizables
-│   ├── Layout/       # Componentes de diseño general
-│   ├── Product/      # Componentes relacionados con productos
-│   └── ...
-├── context/          # Contextos de React
-├── hooks/            # Custom hooks
-├── pages/            # Componentes de página
-│   ├── Home/         # Página de inicio
-│   ├── Cart/         # Carrito de compras
-│   ├── Checkout/     # Página de pago
-│   └── ...
-├── services/         # Lógica de servicios y API
-├── types/            # Definiciones de tipos TypeScript
-├── utils/            # Funciones de utilidad
-├── App.tsx           # Componente raíz de la aplicación
-└── main.tsx          # Punto de entrada de la aplicación
+├── components/
+│   ├── Checkout/            # Checkout form + confirmation
+│   ├── Footer/              # Site footer with links
+│   ├── Header/              # Main header + bottom nav bar
+│   ├── Layout/              # App shell (grid layout)
+│   ├── MaterialComponent/   # MUI wrappers (cart badge, spinner)
+│   ├── NotFound/            # 404 page
+│   ├── SideBar/             # Collapsible filter sidebar
+│   ├── Skeleton/            # Loading skeleton components
+│   └── product/
+│       ├── ProductCard/     # Product card (grid item)
+│       ├── ProductDetail/   # Single product view
+│       ├── ProductForm/     # Create product form
+│       └── ProductList/     # Product grid wrapper
+├── context/
+│   ├── CartContext.tsx      # Shopping cart state (Context + useReducer-ready)
+│   └── ThemeContext.tsx     # Dark/light theme with localStorage persistence
+├── hooks/
+│   ├── useCategories.ts    # Categories query
+│   ├── useDebounce.ts      # Generic debounce hook
+│   ├── useProductFilters.ts# URL-param-based product filtering
+│   └── useProducts.ts      # Products query
+├── pages/
+│   ├── Cart/                # Cart page
+│   ├── CreateProduct/       # Product creation page
+│   └── Home/                # Homepage with product grid
+├── services/
+│   └── api.ts               # Axios API client (FakeStore)
+├── styles/
+│   └── tokens.css           # Design system CSS custom properties
+├── types/                   # TypeScript interfaces
+├── utils/
+│   ├── filters.ts           # Legacy filter utilities
+│   ├── formatPrice.ts       # Price formatting (USD/ARS)
+│   └── searchParams.ts      # URLSearchParams helpers
+├── App.tsx                  # Root component with lazy routes
+├── main.tsx                 # Entry point (providers)
+└── index.css                # Global styles + imports tokens
 ```
-## 🌍 Vista en Vivo
 
-Puedes ver una versión desplegada de la aplicación en:
-https://ecommerce-clon.netlify.app/
+## 🎨 Design System
 
-## 📝 Licencia
+The entire visual language is driven by CSS custom properties defined in `src/styles/tokens.css`:
 
-Este proyecto está bajo la licencia MIT. Ver el archivo `LICENSE` para más detalles.
+```css
+--color-primary: #ffe600;        /* Meli yellow */
+--color-accent: #3483fa;         /* Meli blue */
+--color-free-shipping: #00a650;  /* Shipping green */
+--text-price: #333333;           /* Dark price text */
+--bg-page: #ebebeb;              /* Page background */
+--font-family: 'Inter', ...;     /* Primary font */
+```
 
-## ✨ Características
+Dark mode is handled by a single `.dark` class on `<html>` that overrides every variable:
 
-- Catálogo de productos con filtrado y búsqueda
-- Carrito de compras persistente
-- Proceso de checkout
-- Diseño responsive
-- Manejo de estado global con React Context
-- Tipado estático con TypeScript
-- Validación de formularios con Formik y Yup
+```css
+.dark {
+  --bg-page: #121212;
+  --bg-card: #1e1e1e;
+  --text-primary: #e8e8e8;
+  /* ... 30+ overrides */
+}
+```
 
-## 🛠️ Tecnologías Adicionales
+## 🧠 Architecture Decisions
 
-- **Axios** - Para realizar peticiones HTTP
-- **React Router** - Para el enrutamiento de la aplicación
-- **TypeScript** - Para tipado estático
-- **Custom Hooks** - Para reutilización de lógica
-- **React Query** - Para manejo de estado del servidor
-- **Material Components** - Para la interfaz de usuario
+### Why CSS Custom Properties instead of a CSS-in-JS library?
+
+CSS custom properties are natively supported, have zero runtime cost, and make dark mode trivially simple — just toggle a class on the root element. Every component that uses `var(--bg-card)` automatically adapts. No styled-components, no emotion runtime — just pure CSS.
+
+### Why React.lazy + manual Vite chunks?
+
+The initial bundle was 511 KB (monolithic). By splitting into:
+- `vendor-react` (React, Router) — 47 KB
+- `vendor-mui` (MUI core + icons) — 109 KB
+- `vendor-form` (Formik + Yup) — 73 KB
+- `vendor-query` (React Query) — 37 KB
+- Route-level lazy chunks (1–7 KB each)
+
+...the main app code drops to 227 KB and pages load on demand. This follows the PRPL pattern.
+
+### Why URL-based search params for filters?
+
+Storing filters in URL search params (`?search=phone&category=electronics`) makes them:
+- **Shareable** — send a link with filters applied
+- **Server-renderable** — the initial state comes from the URL
+- **Back-button-safe** — browser history works naturally
+
+### Why Formik + Yup in Checkout?
+
+The original checkout used raw `useState` with HTML5 validation. Migrating to Formik + Yup gives:
+- Declarative validation rules
+- Per-field error messages in Spanish
+- Async submission handling
+- Consistent UX with the Create Product form
+
+## 🌐 Demo
+
+**Live:** [ecommerce-clon.netlify.app](https://ecommerce-clon.netlify.app)
+
+## 📝 License
+
+MIT — see [LICENSE](LICENSE).
+
+---
+
+<p align="center">
+  Built with ❤️ by <a href="https://github.com/Gerardo-Rioss">Gerardo Ríos</a>
+</p>

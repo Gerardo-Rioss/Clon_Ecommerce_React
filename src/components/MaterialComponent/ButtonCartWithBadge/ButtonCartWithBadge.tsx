@@ -14,13 +14,14 @@ const CartBadge = styled(Badge)`
 
 function ButtonCartWithBadge() {
   const { cart } = useCart();
-  const itemCount = cart.length;
+  // Total de productos sumando cantidades, no items distintos
+  const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
   return (
-    <Link to="/cart">
-    <IconButton>
-      <ShoppingCartOutlinedIcon fontSize="small" />
-      <CartBadge badgeContent={itemCount} color="primary" overlap="circular" />
-    </IconButton>
+    <Link to="/cart" aria-label={`Carrito con ${totalItems} productos`}>
+      <IconButton aria-label="carrito">
+        <ShoppingCartOutlinedIcon fontSize="small" />
+        <CartBadge badgeContent={totalItems} color="primary" overlap="circular" />
+      </IconButton>
     </Link>
   );
 }

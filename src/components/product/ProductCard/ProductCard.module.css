@@ -4,63 +4,138 @@
   display: block;
 }
 
-.cardContainer {
-  width: 100%;
-  min-width: 180px;
-  max-width: 250px;
-  height: 280px;
+.card {
+  background: var(--bg-card);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: 12px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f1f5f9;
-  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid var(--border-light);
 }
 
-.cardContainer:hover {
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  border-color: #e2e8f0;
+  border-color: transparent;
 }
 
-.imageContainer {
+/* ─── Image ─── */
+.imageWrapper {
   width: 100%;
-  height: 160px;
+  aspect-ratio: 1/1;
   overflow: hidden;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: #f8f9fa;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
   position: relative;
 }
 
+.imageSkeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 .image {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
 }
 
-.cardContainer:hover .image {
-  transform: scale(1.05);
+.imageLoaded {
+  opacity: 1;
 }
 
-.cardContent {
-  padding: 1rem;
+.card:hover .image {
+  transform: scale(1.06);
+}
+
+/* ─── Envío gratis badge ─── */
+.shippingBadge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: var(--color-free-shipping-bg);
+  color: var(--color-free-shipping);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 3px;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
+}
+
+/* ─── Info ─── */
+.info {
+  padding: 12px 14px 14px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 4px;
   flex-grow: 1;
-  justify-content: space-between;
 }
 
-.name {
-  font-size: 0.9rem;
+/* Price row: $ 1.234  */
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+  line-height: 1;
+}
+
+.priceSymbol {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-price);
+}
+
+.priceInteger {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text-price);
+  letter-spacing: -0.5px;
+}
+
+.priceCents {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-price);
+  vertical-align: super;
+  line-height: 1;
+}
+
+/* ─── Installments ─── */
+.installments {
+  font-size: 12px;
+  color: var(--color-free-shipping);
+  margin: 2px 0 0;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.installments strong {
   font-weight: 600;
-  margin: 0;
-  color: #1e293b;
+}
+
+/* ─── Title ─── */
+.title {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin: 4px 0 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -70,60 +145,73 @@
   line-height: 1.4;
 }
 
-.price {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #059669;
-  margin: 0;
+/* ─── Rating ─── */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin-top: auto;
+  padding-top: 6px;
 }
 
-/* Responsive Design */
+.stars {
+  font-size: 12px;
+  color: #3483fa;
+  letter-spacing: 1px;
+}
+
+.reviewCount {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ─── Dark mode overrides ─── */
+:global(.dark) .imageWrapper {
+  background: #1a1a1a;
+}
+
+:global(.dark) .imageSkeleton {
+  background: linear-gradient(90deg, #2a2a2a 25%, #333 50%, #2a2a2a 75%);
+}
+
+/* ─── Responsive ─── */
 @media (max-width: 768px) {
-  .cardContainer {
-    min-width: 160px;
-    max-width: 200px;
-    height: 250px;
+  .imageWrapper {
+    padding: 14px;
   }
-  
-  .imageContainer {
-    height: 140px;
+
+  .priceInteger {
+    font-size: 20px;
   }
-  
-  .cardContent {
-    padding: 0.75rem;
+
+  .priceSymbol {
+    font-size: 14px;
   }
-  
-  .name {
-    font-size: 0.85rem;
+
+  .priceCents {
+    font-size: 11px;
   }
-  
-  .price {
-    font-size: 1rem;
+
+  .title {
+    font-size: 13px;
+  }
+
+  .info {
+    padding: 10px 10px 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .cardContainer {
-    min-width: 140px;
-    max-width: 180px;
-    height: 220px;
+  .imageWrapper {
+    padding: 10px;
   }
-  
-  .imageContainer {
-    height: 120px;
+
+  .priceInteger {
+    font-size: 18px;
   }
-  
-  .cardContent {
-    padding: 0.6rem;
-    gap: 0.4rem;
-  }
-  
-  .name {
-    font-size: 0.8rem;
-  }
-  
-  .price {
-    font-size: 0.95rem;
+
+  .info {
+    padding: 8px 8px 10px;
+    gap: 3px;
   }
 }

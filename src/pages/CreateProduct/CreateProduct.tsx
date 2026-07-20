@@ -4,6 +4,7 @@ import axios from "axios";
 import ProductForm from "../../components/product/ProductForm/ProductForm";
 import type { ProductFormValues } from "../../types/ProductFormValues";
 import styles from "./CreateProduct.module.css";
+import { formatUSD } from "../../utils/formatPrice";
 
 interface ProductResponse {
   id: number;
@@ -93,7 +94,7 @@ export default function CreateProduct() {
             <div className={styles.detailRow}>
               <span className={styles.detailLabel}>Precio:</span>
               <span className={styles.detailValue}>
-                ${createdProduct.price.toFixed(2)}
+                {formatUSD(createdProduct.price)}
               </span>
             </div>
             <div className={styles.detailRow}>
