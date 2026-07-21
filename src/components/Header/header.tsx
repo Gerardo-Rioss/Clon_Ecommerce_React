@@ -46,7 +46,7 @@ export const Header = ({ onToggleSidebar }: HeaderProps) => {
             <input
               className={styles.inputSearch}
               type="text"
-              placeholder="Buscar productos, marcas y más..."
+              placeholder="Buscar productos...​"
               value={searchParams.get("search") || ""}
               onChange={handleSearchChange}
             />
