@@ -159,7 +159,7 @@ The original checkout used raw `useState` with HTML5 validation. Migrating to Fo
 
 ## 🌐 Demo
 
-**Live:** [ecommerce-clon.netlify.app](https://ecommerce-clon.netlify.app)
+**Live:** [ecommerce-react-clon.vercel.app](https://ecommerce-react-clon.vercel.app)
 
 ## 📝 License
 
